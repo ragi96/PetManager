@@ -22,14 +22,14 @@ namespace PetManager {
         public static BindingList<Person> GetDemoData() {
             var ret = new BindingList<Person>();
             var person = new Person() {Lastname = "Müller", Firstname = "Max"};
-            person.Pets.Add(new Pet { Name = "Cäsar", Breed = "Kanarienvogel"});
-            person.Pets.Add(new Pet { Name = "Bello", Breed = "Hund" });
+            person.Pets.Add(new Pet { Name = "Cäsar", Breed = "Kanarienvogel", Birthday = DateTime.Parse("1.1.2020")});
+            person.Pets.Add(new Pet { Name = "Bello", Breed = "Hund", Birthday = DateTime.Parse("15.8.2016") });
             ret.Add(person);
 
             person = new Person() { Lastname = "Doe", Firstname = "John" };
-            person.Pets.Add(new Pet { Name = "Fleckli", Breed = "Kaninchen" });
-            person.Pets.Add(new Pet { Name = "Hoppel", Breed = "Kaninchen" });
-            person.Pets.Add(new Pet { Name = "Wau", Breed = "Hund" });
+            person.Pets.Add(new Pet { Name = "Fleckli", Breed = "Kaninchen", Birthday = DateTime.Parse("13.10.2019") });
+            person.Pets.Add(new Pet { Name = "Hoppel", Breed = "Kaninchen", Birthday = DateTime.Parse("13.10.2019") });
+            person.Pets.Add(new Pet { Name = "Wau", Breed = "Hund", Birthday = DateTime.Parse("24.1.2008") });
             ret.Add(person);
 
             return ret;
