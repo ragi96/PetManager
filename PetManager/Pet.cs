@@ -21,5 +21,16 @@ namespace PetManager {
                 return age;
             }
         }
+
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hash = 17;
+                hash = hash * 23 + (this.Name != null ? this.Name.GetHashCode() : 0);
+                hash = hash * 23 + (this.Breed != null ? this.Breed.GetHashCode() : 0);
+                return hash;
+            }
+        }
     }
 }
