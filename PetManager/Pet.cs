@@ -22,6 +22,17 @@ namespace PetManager {
             }
         }
 
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Pet))
+            {
+                return object.Equals(obj, this);
+            }
+            var pet = (Pet)obj;
+            return string.Equals(this.Name, pet.Name) && Birthday.Equals(pet.Birthday) &&
+                   string.Equals(this.Breed, pet.Breed);
+        }
+
         public override int GetHashCode()
         {
             unchecked // Overflow is fine, just wrap
@@ -29,6 +40,7 @@ namespace PetManager {
                 int hash = 17;
                 hash = hash * 23 + (this.Name != null ? this.Name.GetHashCode() : 0);
                 hash = hash * 23 + (this.Breed != null ? this.Breed.GetHashCode() : 0);
+                hash = hash * 23 + (this.Birthday != null ? this.Birthday.GetHashCode() : 0);
                 return hash;
             }
         }
